@@ -1,0 +1,12 @@
+{% extends 'poll/base.html' %}
+
+{% block content %}
+    <h2>{{poll.question}}</h2>
+    {% for choice in choices %}
+        <p class="resultsList">{{choice.choice}}- {{choice.votes_set.count}}</p>
+    {% endfor %}
+    <p><a href="add_choices/">add</a></p>
+    <p><a href="vote/">Click here to vote</a></p>
+
+    Share your poll with friend. Copy <a href={{share}}>{{share}}</a> and start the experience of Poll It
+{% endblock %}

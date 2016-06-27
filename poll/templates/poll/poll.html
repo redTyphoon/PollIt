@@ -1,0 +1,10 @@
+{% extends 'poll/base.html' %}
+
+{% block content %}
+    <h1>Adding Poll</h1>
+    <form name="addPoll" action "/add_choices/" method="post"> {% csrf_token %}  
+    	<label id="questionID" for="id_question">Question:</label> 
+        	{{form.question}}
+        <input id="submit" type="submit" value="Submit" />
+    </form>
+{% endblock %}

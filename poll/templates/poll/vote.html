@@ -1,0 +1,15 @@
+{% extends 'poll/base.html' %}
+
+{% block content %}
+    <h1>Vote!</h1>
+    <p>Here's a list of polls</p>
+    {% if poll_query %}
+    <ul>
+        {% for poll in poll_query %}
+            <li><a href='../{{poll.id}}/'>{{poll.question}}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no polls available.</p>   
+    {% endif %}
+{% endblock %}

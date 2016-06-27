@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Poll It</title>
+    </head>
+
+    <body>
+        <h1>Register with Poll It</h1>
+
+        {% if registered %}
+            Thanks {{user.username}}</strong>
+            <a href="../../polls/">Logging to homepage</a><br />
+        {% else %}
+            <strong>Register</strong><br />
+            <form id="user_form" method="post" action="."
+                    enctype="multipart/form-data">
+
+                {% csrf_token %}
+                {{ user_form.as_p }}
+                <input type="submit" name="submit" value="Register" />
+            </form>
+        {% endif %}
+    </body>
+</html>

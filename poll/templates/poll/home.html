@@ -1,0 +1,17 @@
+{% extends 'poll/base.html' %}
+
+{% block content %}
+	<h1>Poll It Home</h1>
+    <p>Welcome {{user.username}}</p> 
+    
+    {% if polls %}
+    <ul>
+        {% for poll in polls %}
+            <li><a href='{{poll.id}}/'>{{poll.question}}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    
+    <p><a href="{% url 'polls' %}">View Polls</a></p>
+    <p><a href="{% url 'add_poll' %}">Add a poll</a></p>  
+{% endblock %}
